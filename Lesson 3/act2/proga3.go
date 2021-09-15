@@ -16,8 +16,15 @@ func main() {
 	if a == 0 && b == 0 && c == 0 {
 		fmt.Println("Дурак, зачем ты нули ввел?")
 	} else {
-		averageValue := (a + b + c) / 2
-		fmt.Println("Среднее число: ", averageValue)
+		if ((a < b) && (b < c)) || ((c < b) && (b < a)) {
+			fmt.Println("Среднее число:", b)
+		} else {
+			if ((b < a) && (a < c)) || ((c < a) && (a < b)) {
+				fmt.Println("Среднее число:", a)
+			} else {
+				fmt.Println("Среднее число:", c)
+			}
+		}
 	}
 
 }
