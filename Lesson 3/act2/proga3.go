@@ -13,16 +13,24 @@ func main() {
 	fmt.Println("Введи третье число: ")
 	fmt.Scanln(&c)
 
-	if a == 0 && b == 0 && c == 0 {
-		fmt.Println("Дурак, зачем ты нули ввел?")
+	if (a == b) && (b == c) {
+		fmt.Println("Среднее число :", a)
 	} else {
-		if ((a < b) && (b < c)) || ((c < b) && (b < a)) {
-			fmt.Println("Среднее число:", b)
+		if (a == b) || (a == c) {
+			fmt.Println("Среднее число :", a)
 		} else {
-			if ((b < a) && (a < c)) || ((c < a) && (a < b)) {
-				fmt.Println("Среднее число:", a)
+			if (b == c) || (b == a) {
+				fmt.Println("Среднее число :", b)
 			} else {
-				fmt.Println("Среднее число:", c)
+				if ((a < b) && (b < c)) || ((c < b) && (b < a)) {
+					fmt.Println("Среднее число:", b)
+				} else {
+					if ((b < a) && (a < c)) || ((c < a) && (a < b)) {
+						fmt.Println("Среднее число:", a)
+					} else {
+						fmt.Println("Среднее число:", c)
+					}
+				}
 			}
 		}
 	}
