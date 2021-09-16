@@ -15,7 +15,7 @@ func main() {
 	fmt.Println("Введи третье число: ")
 	fmt.Scanln(&c)
 
-	if (a > b) && (a < b) {
+	if (a > c) && (a > b) {
 		if c > b {
 			between = c
 		} else {
