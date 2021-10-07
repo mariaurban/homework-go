@@ -15,20 +15,20 @@ func main() {
 	fmt.Println("Введи третье число: ")
 	fmt.Scanln(&c)
 
-	if (a > c) && (a > b) {
-		if c > b {
+	if (a >= c) && (a >= b) {
+		if c >= b {
 			between = c
 		} else {
 			between = b
 		}
-	} else if (b > a) && (b > c) {
-		if a > c {
+	} else if (b >= a) && (b >= c) {
+		if a >= c {
 			between = a
 		} else {
 			between = c
 		}
-	} else if (c > a) && (c > b) {
-		if a > b {
+	} else if (c >= a) && (c >= b) {
+		if a >= b {
 			between = a
 		} else {
 			between = b
