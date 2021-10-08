@@ -27,7 +27,7 @@ func main() {
 		} else {
 			between = c
 		}
-	} else if (c >= a) && (c >= b) {
+	} else {
 		if a >= b {
 			between = a
 		} else {
