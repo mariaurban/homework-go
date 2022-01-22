@@ -1,6 +1,10 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"strconv"
+	"strings"
+)
 
 // Есть массив чисел.
 // Найти в них самое максимальное и минимальное число - поменять их местами.
@@ -16,34 +20,35 @@ func main() {
 	}
 	fmt.Println("Наш массив выглятит так")
 	blyatNakhuyaEtoDelat(numb)
-	min := numb[0]
-	max := numb[0]
+
 	mini := 0
 	maxi := 0
+
 	for i, v := range numb {
-		if v < min {
-			min = v
+		if v < i {
 			mini = i
 		}
-		if v > max {
-			max = v
+		if v > i {
 			maxi = i
 		}
 	}
-	fmt.Println("Максимальное число в массиве :", max)
-	fmt.Println("Минимальное число в массиве :", min)
+	fmt.Println("Максимальное число в массиве :", numb[maxi])
+	fmt.Println("Минимальное число в массиве :", numb[mini])
 	fmt.Println("Сейчас я поменяю местами минимальное и максимальное число ")
 
-	numb[mini] = max
-	numb[maxi] = min
+	max := numb[mini]
+	numb[mini] = numb[maxi]
+	numb[maxi] = max
 
-	fmt.Println("Теперь наш массив выгляди так", numb)
-
+	fmt.Println("Теперь наш массив выгляди так")
+	blyatNakhuyaEtoDelat(numb)
 }
 func blyatNakhuyaEtoDelat(massiv []int) {
+
+	var massivString []string
 	lenBlyat := len(massiv)
 	for i := 0; i < lenBlyat; i++ {
-		fmt.Println(massiv[i])
+		massivString = append(massivString, strconv.Itoa(massiv[i]))
 	}
-
+	fmt.Println(strings.Join(massivString, ","))
 }

@@ -3,6 +3,8 @@ package main
 import (
 	"fmt"
 	"sort"
+	"strconv"
+	"strings"
 )
 
 // Есть массив отсортированный по возрастанию массив чисел.
@@ -11,7 +13,7 @@ import (
 // Вывести результат
 
 func main() {
-	massiv := []int{1, 234, 4, 1, 4, 8, 9, 0, 34, 10}
+	massiv := []int{1, 3, 4, 5, 6, 7, 8, 9, 10}
 	var a int
 	fmt.Println("Наш массив сейчас выглядит так :")
 	blyatNakhuyaEtoDelatNuBlin(massiv)
@@ -24,8 +26,10 @@ func main() {
 }
 
 func blyatNakhuyaEtoDelatNuBlin(massiv []int) {
+	var massivString []string
 	lenBlyat := len(massiv)
 	for i := 0; i < lenBlyat; i++ {
-		fmt.Println(massiv[i])
+		massivString = append(massivString, strconv.Itoa(massiv[i]))
 	}
+	fmt.Println(strings.Join(massivString, ","))
 }
