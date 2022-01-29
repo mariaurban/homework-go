@@ -1,6 +1,10 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"strconv"
+	"strings"
+)
 
 // Есть массив чисел, есть число меньшее чем размер массива.
 // Удалить элемент с этим номером из массива.
@@ -13,12 +17,14 @@ func main() {
 	fmt.Println("Введите число, до 10: ")
 	fmt.Scanln(&i)
 	number = append(number[:i-1], number[i:]...)
-	print("Я удалила элемент под номером", i, "из своего массива")
+	print("Я удалила элемент под номером ", i, " из своего массива\n")
 	blyatNakhuyaEtoDelatNuRili(number)
 }
 func blyatNakhuyaEtoDelatNuRili(massiv []int) {
+	var massivString []string
 	lenBlyat := len(massiv)
 	for i := 0; i < lenBlyat; i++ {
-		fmt.Println(massiv[i])
+		massivString = append(massivString, strconv.Itoa(massiv[i]))
 	}
+	fmt.Println(strings.Join(massivString, ","))
 }
